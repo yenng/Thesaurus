@@ -40,7 +40,6 @@ class List:
         
 
 class MyTreeView(TreeView):
-    _obj = ObjectProperty()
     def on_node_expand(self,node):
         global word
         word = node.text
@@ -79,12 +78,12 @@ class TestApp(App):
         self.root = []
         l = []
         for x in range(len(node.children)):
-            self.root.append(add(TreeViewLabel(text=node.children[x].data, height = 40),
-                                 name))
+            self.root.append(add(TreeViewLabel(text=node.children[x].data, height = 40,is_open=True,
+                                               size_hint_y=None), name))
             l.append(TestApp().getNear(node.children[x].data))
             nodeT = l[x].firstNode
             for y in range(len(nodeT.children)):
-                add(TreeViewLabel(text=nodeT.children[y].data), self.root[x])
+                add(TreeViewLabel(text=nodeT.children[y].data, size_hint_y=None,is_open=True),self.root[x])
 
     def getChildNear(self, treeOrigin,queryWord):
         wordList = TestApp().getNear(queryWord)
@@ -103,9 +102,7 @@ class TestApp(App):
 word = raw_input('Enter the word: ')
 window = ScrollView(size_hunt=(1,None), size = (Window.width,Window.height))
 root = BoxLayout(orientation='vertical',height = 100)
-root.bind(minimum_height=root.setter('height'))
 root1 = BoxLayout(orientation='horizontal')
-#button1 = Button(text='Exit',size_hint=(.1,.1),on_press=MyWidget.close)
 button = Button(text='Generate New List',size_hint=(.1,.1), on_press=MyWidget.new)
 tv = MyTreeView(hide_root=True)
 TestApp().getChildNear(tv, word)
