@@ -1,11 +1,12 @@
 # Introduction
-This program finds n-levels of synonyms of a word given by the user and tabulates them in the treeview form. It is written in Python and Kivy (graphical user interface library). The synonyms are searched and extracted from the www.thesaurus.com website and tabulate the first 5 of the synonyms found.
+This program finds n-levels of synonyms of a word given by the user and tabulates them in the treeview form. It is written in Python and Kivy (graphical user interface library). The synonyms are searched and extracted from the www.thesaurus.com website and tabulate the first 5 of the synonyms found. 
 
+# How it works
 Here's the screenshot of the program:
 
 ![alt text][Screenshot]
 
-
+The thesaurus provides a large number of synonyms but we choose only the first 5 for each depth level to reduce wait time. The user input the interested word into the **query word** text input and hit on 'Enter' key or click on 'Generate New List' button. User can expand and collapse the list. Also user can choose a new query word from the list by clicking the word, the new query will be added below the last list. The treeview is scrollable for lengthy list. Any of the searched result can be removed by right-clicking on the **query word** result. By default the depth of search is 2 levels, but user can change that. However, deeper level will result in longer wait time.
 
 # Setup Kivy:
   Kivy can be downloaded from the official website (https://kivy.org/#download), choose an appropriate version and follow the   instructions. The procedure is pretty straightforward and simple. 
