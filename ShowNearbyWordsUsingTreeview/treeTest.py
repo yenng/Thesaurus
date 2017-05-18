@@ -109,7 +109,7 @@ class TestApp(App):
         #node.printCurrentNode()
 
 word = raw_input('Enter the word: ')
-tvPanel = ScrollView(size_hint=(1,None),Color=(0,1,0,1))
+tvPanel = ScrollView()#size_hint=(1,None)
 tvBox = BoxLayout(orientation='vertical',valign='top',height=100)
 boxPanel = BoxLayout(orientation='vertical',valign='top')
 butPanel = BoxLayout(orientation='horizontal',size_hint=(1,.1))
