@@ -1,5 +1,5 @@
 # Introduction
-This program finds n-levels of synonyms of a word given by the user and tabulates them in the treeview form. It is written in python and kivy. Python code used to determine the functions and kivy code used to create the GUI. The synonyms are extracted from the website (www.thesaurus.com) then only tabulate 5 of the nearest synonyms.
+This program finds n-levels of synonyms of a word given by the user and tabulates them in the treeview form. It is written in Python and Kivy (graphical user interface library). The synonyms are searched and extracted from the www.thesaurus.com website and tabulate the first 5 of the synonyms found.
 
 Here's the screenshot of the program:
 
