@@ -13,6 +13,7 @@ from kivy.core.window import Window
 from kivy.base import runTouchApp, stopTouchApp
 from kivy.uix.textinput import TextInput
 from kivy.graphics import Color
+from kivy.core.window import Window
 import dictionary
 
 
@@ -49,23 +50,31 @@ class MyTreeView(TreeView):
         node = self.get_node_at_pos(touch.pos)
         global word
         global tv
-        # This code is to delete the unwanted query word
-        if(touch.button=='right'):
-            # Only remove the node that contains "Query Word:"
-            if node.text.find('Query Word:')==0:
-                tv.remove_node(node)
         if node != None:
-            word = node.text
-        return super(MyTreeView, self).on_touch_down(touch)
-        
-    
+        # This code is to delete the unwanted query word
+            if(touch.button=='right'):
+                # Only remove the node that contains "Query Word:"
+                if node.text.find('Query Word:')==0:
+                    tv.remove_node(node)
+            else:
+                if node.text.find('Query Word:')==0:
+                    wordInput.text = word = node.text[12:]
+                else:
+                    wordInput.text = word = node.text
+            return super(MyTreeView, self).on_touch_down(touch)
+            
+
 class MyWidget(Widget):
     def new(self):
         global word
         global tv
-        TestApp().getChildNear(tv, word)##############
+        word = wordInput.text
+        if word != '':
+            TestApp().getChildNear(tv, word)
+        
 
 class TestApp(App):
+    
     def build(self):
         return 
 
@@ -107,22 +116,34 @@ class TestApp(App):
             nearbyWord.append(node.children[i].data)
         TestApp().buildTree(treeOrigin, node, self.queryWord)
         #node.printCurrentNode()
+def on_enter(instance):
+    global word
+    word = wordInput.text
+    TestApp().getChildNear(tv, word)
 
-word = raw_input('Enter the word: ')
+
+wordInput = TextInput(multiline=False,size_hint=(1,.05))
+wordInput.bind(on_text_validate=on_enter)
+
+
+
+Window.set_title("Find Nearby Words")
+word = ''
 tvPanel = ScrollView()#size_hint=(1,None)
 tvBox = BoxLayout(orientation='vertical',valign='top',height=100)
 boxPanel = BoxLayout(orientation='vertical',valign='top')
-butPanel = BoxLayout(orientation='horizontal',size_hint=(1,.1))
+butPanel = BoxLayout(orientation='horizontal',size_hint=(.5,.1))
 button = Button(text='Generate New List', on_press=MyWidget.new)
 #button = Button(text='Generate New List',size_hint=(.1,.1), on_press=MyWidget.new)
 tv = MyTreeView(root_options=dict(text='Nearby Words'),hide_root=True)
 tv.size_hint = 1,None
 tv.bind(minimum_height = tv.setter('height'))
-TestApp().getChildNear(tv, word)
+#TestApp().getChildNear(tv, word)
 butPanel.add_widget(button)
 tvPanel.add_widget(tv)
 #boxPanel.add_widget(butPanel)
 tvBox.add_widget(tvPanel)
+boxPanel.add_widget(wordInput)
 boxPanel.add_widget(tvBox)
 boxPanel.add_widget(butPanel)
 runTouchApp(boxPanel)
