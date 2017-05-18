@@ -5,7 +5,7 @@ from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.scrollview import ScrollView
 from kivy.uix.textinput import TextInput
-import dictionary
+import thesaurus
 
 # Sub class of Kivy treeview 
 class MyTreeView(TreeView):
@@ -110,9 +110,9 @@ class FindNearbyWordApp(App):
         windowPanel.add_widget(buttonPanel)
         return windowPanel
 
-    # Get a list of nearby words from Dictionary.
+    # Get a list of nearby words from Thesaurus.
     def getNear(self,queryWord):
-        dic = dictionary.Dictionary()
+        dic = thesaurus.Thesaurus()
         dic.getNearbyWord(queryWord)
         nearbyWords = []
         for i in range(len(dic.near)/2):
@@ -121,7 +121,7 @@ class FindNearbyWordApp(App):
 
     # Build a treeview of nearby words recursively.
     def buildTree(self, treeOrigin, queryWord, parentNode, level):
-        # This is a recursive function to extract n-level of nearby words from Dictionary
+        # This is a recursive function to extract n-level of nearby words from Thesaurus
         def addNode(treeOrigin, queryWord, parentNode, level):
             # Abbreviate add_node function of treeOrigin object.
             add = treeOrigin.add_node
