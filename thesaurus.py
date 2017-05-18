@@ -1,9 +1,8 @@
-from HTMLParser import HTMLParser
 from bs4 import BeautifulSoup
 import urllib
 
 # Get the nearby words from www.dictionary.com
-class Dictionary:
+class Thesaurus:
   def getNearbyWord(self,queryWord):
     count = 10
     # Create an array to store all nearby words
@@ -34,6 +33,7 @@ class Dictionary:
 
     self.query = queryWord
     self.near = nearbyList
-    '''
-dic = Dictionary()
-dic.getNearbyWord('provide')'''
+
+syn = Thesaurus()
+syn.getNearbyWord('test')
+print syn.near
