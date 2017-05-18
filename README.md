@@ -11,8 +11,14 @@ The thesaurus provides a large number of synonyms but we choose only the first 5
 # Implementation
 The code that parse the html from www.thesaurus.com is in `thesaurus.py`. It uses [BeautifulSoup][1] packages to parse html file. The main program is `FindNearByWordsApp.py`. The synonym are extracted using recursive call of n-level.
 
-# Setup Kivy:
-  Kivy can be downloaded from the official website (https://kivy.org/#download), choose an appropriate version and follow the   instructions. The procedure is pretty straightforward and simple. 
+# Installation
+In order to run this program, the following packages are needed.
+ 1. Python2
+ 2. BeautifulSoup package
+ 3. Kivy
+
+### Kivy installation instruction
+Kivy can be downloaded from the official website (https://kivy.org/#download), choose an appropriate version and follow the   instructions. The procedure is pretty straightforward and simple. 
   
   To check whether the installation is working, follow the instructions:
     
