@@ -33,7 +33,7 @@ class Thesaurus:
 
     self.query = queryWord
     self.near = nearbyList
-
+'''
 syn = Thesaurus()
 syn.getNearbyWord('test')
-print syn.near
+print syn.near'''
