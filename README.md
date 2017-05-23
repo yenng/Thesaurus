@@ -19,20 +19,29 @@ In order to run this program, the following packages are needed.
 
 ### Kivy installation instruction
 Kivy can be downloaded from the official website (https://kivy.org/#download), choose an appropriate version and follow the   instructions. The procedure is pretty straightforward and simple. 
-  
-  To check whether the installation is working, follow the instructions:
-    
-    `On a Linux machine:`
-      1.Open a terminal.
-      2.Run python.
-      3.The Python prompt, >>>, should appear. Type import kivy.
-      4.The command should print a message similar to [INFO] Kivy v1.8.0.
 
-    `On a Windows box:`
-      1.Double-click kivy.bat inside the Kivy package directory.
-      2.Type python at the command prompt. 
-      3.Type import kivy.
-      4.The command should print a message similar to [INFO] Kivy v1.8.0.
+    `On a Windows10 OS:`
+      Follow ths steps that shown in https://kivy.org/docs/installation/installation-windows.html.
       
+
+    `On a Ubuntu-16 OS:`
+      1. Add a stable build PPAs
+        $ sudo add-apt-repository ppa:kivy-team/kivy
+      2. Update your package list using your package manager
+        $ sudo apt-get update
+      3. Install Kivy for python2 (python2 is used in this project)
+        $ sudo apt-get install python-kivy
+      4. Make sure kivy successfully installed.
+        $ python
+        >>> import kivy
+        
+        ** If the results shows as shown below, the kivy is succesfully installed.
+        Purge log fired. Analysing...
+        Purge finished!
+        [INFO   ] [Logger      ] Record log in C:\Users\user3\.kivy\logs\kivy_17-05-23_0.txt
+        [INFO   ] [Kivy        ] v1.10.0
+        [INFO   ] [Python      ] v2.7.13 (v2.7.13:a06454b1afa1, Dec 17 2016, 20:53:40) [MSC v.1500 64 bit (AMD64)]
+        >>>
+
 [Screenshot]: https://github.com/yenng/Dictionary/blob/master/Document/Image/SynonymsExample.PNG 
 [1]: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
