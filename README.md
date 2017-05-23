@@ -17,10 +17,17 @@ In order to run this program, the following packages are needed.
  2. BeautifulSoup package
  3. Kivy
 
-### Kivy installation instruction
-Kivy can be downloaded from the official website (https://kivy.org/#download), choose an appropriate version and follow the   instructions. The procedure is pretty straightforward and simple. 
+### BeautifulSoup installation
+    1. In Windows10 OS:
+      easy_install BeautifulSoup4
+              or
+      easy_install BeautifulSoup
+    2. In Ubuntu-16 OS
+      $ apt-get install python-bs4
+   
 
-    `On a Windows10 OS:`
+### Kivy installation instruction
+    On a Windows10 OS:
       1. Ensure you have the latest pip and wheel:
         python -m pip install --upgrade pip wheel setuptools
       2. Install the dependencies (python2):
@@ -41,7 +48,7 @@ Kivy can be downloaded from the official website (https://kivy.org/#download), c
       Note:
         If you encounter any permission denied errors, try opening the Command prompt as administrator and trying again.
 
-    `On a Ubuntu-16 OS:`
+    On a Ubuntu-16 OS:
       1. Add a stable build PPAs
         $ sudo add-apt-repository ppa:kivy-team/kivy
       2. Update your package list using your package manager
