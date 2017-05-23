@@ -27,6 +27,8 @@ In order to run this program, the following packages are needed.
    
 
 ### Kivy installation instruction
+`The following installation steps were tested to work on Windows 10 and Linux Ubuntu version 16.04.2`
+
     On a Windows10 OS:
       1. Ensure you have the latest pip and wheel:
         python -m pip install --upgrade pip wheel setuptools
