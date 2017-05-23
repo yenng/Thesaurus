@@ -21,8 +21,25 @@ In order to run this program, the following packages are needed.
 Kivy can be downloaded from the official website (https://kivy.org/#download), choose an appropriate version and follow the   instructions. The procedure is pretty straightforward and simple. 
 
     `On a Windows10 OS:`
-      Follow ths steps that shown in https://kivy.org/docs/installation/installation-windows.html.
-      
+      1. Ensure you have the latest pip and wheel:
+        python -m pip install --upgrade pip wheel setuptools
+      2. Install the dependencies (python2):
+        python -m pip install docutils pygments pypiwin32 kivy.deps.sdl2 kivy.deps.glew
+      3. Install kivy:
+        python -m pip install kivy
+      4. Make sure kivy successfully installed
+        C:\Users\user3>python
+        Python 2.7.13 (v2.7.13:a06454b1afa1, Dec 17 2016, 20:53:40) [MSC v.1500 64 bit (AMD64)] on win32
+        Type "help", "copyright", "credits" or "license" for more information.
+        >>> import kivy
+        [INFO   ] [Logger      ] Record log in C:\Users\user3\.kivy\logs\kivy_17-05-23_0.txt
+        [INFO   ] [Kivy        ] v1.10.0
+        [INFO   ] [Python      ] v2.7.13 (v2.7.13:a06454b1afa1, Dec 17 2016, 20:53:40) [MSC v.1500 64 bit (AMD64)]
+        >>>
+        * If the message above appeared, kivy is installed succesfully
+        
+      Note:
+        If you encounter any permission denied errors, try opening the Command prompt as administrator and trying again.
 
     `On a Ubuntu-16 OS:`
       1. Add a stable build PPAs
@@ -34,14 +51,13 @@ Kivy can be downloaded from the official website (https://kivy.org/#download), c
       4. Make sure kivy successfully installed.
         $ python
         >>> import kivy
-        
-        ** If the results shows as shown below, the kivy is succesfully installed.
         Purge log fired. Analysing...
         Purge finished!
         [INFO   ] [Logger      ] Record log in C:\Users\user3\.kivy\logs\kivy_17-05-23_0.txt
         [INFO   ] [Kivy        ] v1.10.0
         [INFO   ] [Python      ] v2.7.13 (v2.7.13:a06454b1afa1, Dec 17 2016, 20:53:40) [MSC v.1500 64 bit (AMD64)]
         >>>
+        * If the message above appeared, kivy is installed succesfully
 
 [Screenshot]: https://github.com/yenng/Dictionary/blob/master/Document/Image/SynonymsExample.PNG 
 [1]: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
